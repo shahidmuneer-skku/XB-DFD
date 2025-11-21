@@ -2,7 +2,7 @@
   <h1 align="center">XB-DFD: Explanation Bottleneck Deepfake Detection Models</h1>
 </p>
 <p align="center">
-  <img src="./train_diagram.png" alt="Training Overview" >
+  <img src="train_diagram.png" alt="Training Overview" >
 </p>
 <h2>🥇Abstract</h2>
 <div style="text-align: justify;">
