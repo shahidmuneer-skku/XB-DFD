@@ -1,0 +1,1 @@
+ python inference.py --checkpoint /media/NAS/USERS/shahid/ICLR/training_logs/CVPR2026/bert-fine-tuned-test/rawnet/20251027-114743/checkpoints/model_state.pt --images_path /media/NAS/DATASET/CelebDF_v2/Fake/id20_id3_0000/frame0_face.png
