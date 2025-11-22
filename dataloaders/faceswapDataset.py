@@ -458,7 +458,7 @@ class FaceswapDataset(Dataset):
 
             
             
-            # root_dir = "/media/NAS/DATASET/faceforensics++/QAD/qad/data_c40/original_sequences/youtube/c40/v1faces"
+            # root_dir = "./qad/data_c40/original_sequences/youtube/c40/v1faces"
                     
             # for directory in os.listdir(root_dir):
             #     dir_path = os.path.join(root_dir, directory)
@@ -472,7 +472,7 @@ class FaceswapDataset(Dataset):
             #             "label": 0 
             #         })
 
-            # root_dir = "/media/NAS/DATASET/faceforensics++/QAD/qad/data_c40/manipulated_sequences/NeuralTextures/c40/v1faces"
+            # root_dir = "./qad/data_c40/manipulated_sequences/NeuralTextures/c40/v1faces"
                     
             # for directory in os.listdir(root_dir):
             #     dir_path = os.path.join(root_dir, directory)
@@ -487,84 +487,9 @@ class FaceswapDataset(Dataset):
             #         })
 
         if partition=="train":
-            # df = pd.read_csv("/media/NAS/DATASET/DFWild-Cup/train.csv")
-            # df = df[df["dataset"]=="DFWild-Cup"]
-            # # df = df[df["label"]==0]
-            # for index,row in df.iterrows():
-            #     if os.path.exists(row["path"]):
-            #         self.file_list.append({
-            #             "path":row["path"],
-            #             "label":row["label"]
-            #         })
-                    
-            # df = df[df["dataset"]=="WildDeepFake"]
-            # df = df[df["label"]==0]
-            # for index,row in df.iterrows():
-            #     if os.path.exists(row["path"]):
-            #         self.file_list.append({
-            #             "path":row["path"],
-            #             "label":row["label"]
-            #         })
-            # root_dir = "/media/NAS/DATASET/faceforensics++/Original/c0/FaceSwap"
-                    
-            # for directory in os.listdir(root_dir):
-            #     dir_path = os.path.join(root_dir, directory)
-
-            #     for file in os.listdir(dir_path):
-            #         full_path = os.path.join(dir_path, file)
-            #         # print(full_path)  # Remove or comment out if not needed
-            #         # exit()  # Commented out to avoid premature termination
-            #         self.file_list.append({
-            #             "path": full_path,
-            #             "label": 0 if "Original" in directory else 1
-            #         })
-
-            
-            # root_dir = "/media/NAS/DATASET/faceforensics++/QAD/qad/data_c40/original_sequences/youtube/c40/v1faces"
-            
-            # root_dir_raw = "/media/NAS/DATASET/faceforensics++/QAD/qad/data_raw/original_sequences/youtube/raw/v1faces"
-            # # v1face_data\data_raw\manipulated_sequences
-            
-            # for directory in os.listdir(root_dir):
-            #     dir_path = os.path.join(root_dir, directory)
-            #     dir_path_raw = os.path.join(root_dir_raw, directory)
-
-            #     for file in os.listdir(dir_path):
-            #         full_path = os.path.join(dir_path, file)
-            #         full_path_raw = os.path.join(dir_path_raw, file)
-            #         # print(full_path)  # Remove or comment out if not needed
-            #         # exit()  # Commented out to avoid premature termination
-            #         # low_quality_dataset[file.split(".")[0]]=full_path
-            #         self.file_list.append({
-            #                 "path":full_path_raw,
-            #                 "low_quality_file":full_path,
-            #                 "label":0
-            #         })
-                       
-
-            # root_dir = "/media/NAS/DATASET/faceforensics++/QAD/qad/data_c40/manipulated_sequences/NeuralTextures/c40/v1faces"
-            # # root_dir_raw = "/media/NAS/DATASET/faceforensics++/QAD/qad/data_raw/"
-            
-            # root_dir_raw = "/media/NAS/DATASET/faceforensics++/QAD/qad/data_raw/manipulated_sequences/NeuralTextures/raw/v1faces"
-            # for directory in os.listdir(root_dir):
-            #     dir_path = os.path.join(root_dir, directory)
-            #     dir_path_raw = os.path.join(root_dir_raw, directory)
-
-            #     for file in os.listdir(dir_path):
-            #         full_path = os.path.join(dir_path, file)
-            #         full_path_raw = os.path.join(dir_path_raw, file)
-            #         # print(full_path)  # Remove or comment out if not needed
-            #         # exit()  # Commented out to avoid premature termination
-            #         # low_quality_dataset[file.split(".")[0]]=full_path
-            #         self.file_list.append({
-            #                 "path":full_path_raw,
-            #                 "low_quality_file":full_path,
-            #                 "label":1
-            #         })
-
             
                        
-            original_root = "/media/NAS/DATASET/faceforensics++/QAD/v1face_data/data_raw/original_sequences/youtube/raw/v1faces"
+            original_root = "./v1face_data/data_raw/original_sequences/youtube/raw/v1faces"
             load_faceforensics_dataset(
                 root = Path(original_root),
                 label = 0,
@@ -572,35 +497,35 @@ class FaceswapDataset(Dataset):
             )
             
             print(f"Total files in after original {partition} are {len(self.file_list)}")
-            faceswap_root = "/media/NAS/DATASET/faceforensics++/QAD/v1face_data/data_raw/manipulated_sequences/Deepfakes/raw/v1faces"
+            faceswap_root = "./v1face_data/data_raw/manipulated_sequences/Deepfakes/raw/v1faces"
             load_faceforensics_dataset(
                 root = Path(faceswap_root),
                 label = 1,
                 file_list   = self.file_list
             )
             print(f"Total files in after Deepfakes {partition} are {len(self.file_list)}")
-            faceswap_root = "/media/NAS/DATASET/faceforensics++/QAD/v1face_data/data_raw/manipulated_sequences/Face2Face/raw/v1faces"
+            faceswap_root = "./v1face_data/data_raw/manipulated_sequences/Face2Face/raw/v1faces"
             load_faceforensics_dataset(
                 root = Path(faceswap_root),
                 label = 1,
                 file_list   = self.file_list
             )
             print(f"Total files in after face2face {partition} are {len(self.file_list)}")
-            faceswap_root = "/media/NAS/DATASET/faceforensics++/QAD/v1face_data/data_raw/manipulated_sequences/FaceShifter/raw/v1faces"
+            faceswap_root = "./v1face_data/data_raw/manipulated_sequences/FaceShifter/raw/v1faces"
             load_faceforensics_dataset(
                 root = Path(faceswap_root),
                 label = 1,
                 file_list   = self.file_list
             )
             print(f"Total files in after faceshifter {partition} are {len(self.file_list)}")
-            faceswap_root = "/media/NAS/DATASET/faceforensics++/QAD/v1face_data/data_raw/manipulated_sequences/FaceSwap/raw/v1faces"
+            faceswap_root = "./v1face_data/data_raw/manipulated_sequences/FaceSwap/raw/v1faces"
             load_faceforensics_dataset(
                 root = Path(faceswap_root),
                 label = 1,
                 file_list   = self.file_list
             )
             print(f"Total files in after faceswap {partition} are {len(self.file_list)}")
-            faceswap_root = "/media/NAS/DATASET/faceforensics++/QAD/v1face_data/data_raw/manipulated_sequences/NeuralTextures/raw/v1faces"
+            faceswap_root = "./v1face_data/data_raw/manipulated_sequences/NeuralTextures/raw/v1faces"
             load_faceforensics_dataset(
                 root = Path(faceswap_root),
                 label = 1,

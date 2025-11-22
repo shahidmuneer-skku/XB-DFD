@@ -615,7 +615,7 @@ class MMModerator(nn.Module):
         
         self.encoder = vision_encoder
         
-        med_config = "/media/NAS/USERS/shahid/MultimodalAudioVisualModerator/models/xbm/configs/bert_config.json"
+        med_config = "./models/xbm/configs/bert_config.json"
         vision_width=1024
         self.tokenizer = init_tokenizer()
         self.tokenizer.padding_side = "left"

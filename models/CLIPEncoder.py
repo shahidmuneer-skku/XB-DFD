@@ -28,7 +28,7 @@ class CLIPEncoder(nn.Module):
                 (520, 520).
         """
         super().__init__()
-        clip_model = CLIPModel.from_pretrained("/media/NAS/USERS/shahid/Effort-AIGI-Detection/models--openai--clip-vit-large-patch14")  # the path of this folder in your disk (download from the above link)
+        clip_model = CLIPModel.from_pretrained("./models--openai--clip-vit-large-patch14")  # the path of this folder in your disk (download from the above link)
         
         # Apply SVD to self_attn layers only
         # ViT-L/14 224*224: 1024-1
