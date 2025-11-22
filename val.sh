@@ -5,4 +5,4 @@
 # # export NCCL_IB_DISABLE=1
 # # export NCCL_SOCKET_IFNAME=^lo,docker0
 echo $CUDA_VISIBLE_DEVICES
-CUDA_VISIBLE_DEVICES=0,1,2 torchrun --standalone --nproc_per_node=3 val.py --base_dir /media/NAS/DATASET/deepspeak/ --batch_size 14 --log_dir ./training_logs/validation --load_from /media/NAS/USERS/shahid/ICLR/training_logs/CVPR2026/bert-exp_reproduce/rawnet/20251121-024618/
+CUDA_VISIBLE_DEVICES=0,1,2 torchrun --standalone --nproc_per_node=3 val.py --base_dir <base_dir> --batch_size 14 --log_dir ./training_logs/validation --load_from <model_checkpoint_path>

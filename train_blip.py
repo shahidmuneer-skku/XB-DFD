@@ -75,7 +75,7 @@ def compute_caption_metrics(generated_captions, ground_truth_captions):
     }
 
 def create_vision_encoder():
-    REPO_DIR = "/media/NAS/USERS/shahid/MultimodalAudioVisualModerator/dinov3"
+    REPO_DIR = "/dinov3"
     model = CLIPEncoder()
     return model
    

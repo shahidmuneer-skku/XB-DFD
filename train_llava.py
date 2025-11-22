@@ -81,7 +81,7 @@ def create_vision_encoder():
 
     
             
-    REPO_DIR = "/media/NAS/USERS/shahid/MultimodalAudioVisualModerator/dinov3"
+    REPO_DIR = "dinov3"
    
 # 
     # return encoder

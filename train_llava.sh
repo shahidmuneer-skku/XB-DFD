@@ -5,4 +5,4 @@
 # # export NCCL_IB_DISABLE=1
 # # export NCCL_SOCKET_IFNAME=^lo,docker0
 echo $CUDA_VISIBLE_DEVICES
-CUDA_VISIBLE_DEVICES=0,1,2 torchrun --standalone --nproc_per_node=3 alignment_train_images_pretrained_split_llava.py --base_dir /media/NAS/DATASET/deepspeak/ --batch_size 8 --log_dir /media/NAS/USERS/shahid/ICLR/training_logs/CVPR2026/bert-fine-tuned-llava #--load_from /media/NAS/USERS/shahid/ICLR/training_logs/CVPR2026/bert-fine-tuned-test/rawnet/20251025-014240/
+CUDA_VISIBLE_DEVICES=0,1,2 torchrun --standalone --nproc_per_node=3 train_llava.py --base_dir <base_dir> --batch_size 8 --log_dir ./training_logs
